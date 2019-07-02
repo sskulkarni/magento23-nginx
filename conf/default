@@ -186,4 +186,9 @@ server {
 	location ~* (\.php$|\.htaccess$|\.git) {
 	    deny all;
 	}
+	location /wp {
+		index index.php;
+		try_files $uri $uri/ /wp/index.php?$args;
+	}
+
 }
